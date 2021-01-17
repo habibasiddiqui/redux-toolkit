@@ -2,9 +2,12 @@ import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import AddForm from './AddForm';
 import { deleteTodo, editTodo } from '../store/TodoSlice';
+import Title from './Title';
+
+
 function TodoList() {
     const tasks = useSelector(state => state);
-    console.log(tasks)
+    // console.log(tasks)
 
     const dispatch = useDispatch();
 
@@ -21,13 +24,16 @@ function TodoList() {
     // console.log('after edit:', tasks);
     return (
         <div>
+            <Title />
+
             <AddForm />
             {tasks.length > 0 ? (
                 tasks.map(item => (
-                    <p key={item.id}>{item.title}
+                    <div key={item.id}>{item.title}
+                    
                     <button onClick={() => handleDelete(item.id)}>Del</button>
                     <button onClick={() => handleEdit(item)}>Edit</button>
-                    </p>
+                    </div>
                 ))
             ) : (
                 <p>No tasks left, yay!</p>

@@ -4,7 +4,7 @@ const listSlice = createSlice({
     name: 'todoList',
     initialState: [
         {
-            title: 'first',
+            title: 'first task',
             id: 1
         }
         // 'first'   
@@ -32,16 +32,9 @@ const listSlice = createSlice({
             })
             return updatedTasks
         },
-        // deleteAll(state) {
-        //     const emptyList = []
-        //     return emptyList;
-
-        // }
         
-        // deleteAll: state => state=['kll']
-     
     }
 });
-export const { addTodo, deleteTodo, editTodo, deleteAll } = listSlice.actions;
+export const { addTodo, deleteTodo, editTodo } = listSlice.actions;
 
 export default listSlice.reducer;
