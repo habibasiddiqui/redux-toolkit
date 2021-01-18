@@ -17,3 +17,27 @@ code {
   src: url("./fonts/segoepr.ttf");
 }
 
+.headingImg {
+  border: 1px solid black;
+  border-radius: 6px !important;
+  /* vertical-align: middle; */
+  margin-right: 10px;
+}
+
+.title {
+  overflow-wrap: break-word;
+}
+
+.input{
+  width: 90%;
+  /* padding-left: 10px !important; */
+  /* padding-right: 10px !important; */
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+}

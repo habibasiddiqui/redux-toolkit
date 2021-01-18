@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import AddForm from './AddForm';
 import { deleteTodo, editTodo } from '../store/TodoSlice';
-import Title from './Title';
 
 
 function TodoList() {
@@ -24,7 +23,6 @@ function TodoList() {
     // console.log('after edit:', tasks);
     return (
         <div>
-            <Title />
 
             <AddForm />
             {tasks.length > 0 ? (

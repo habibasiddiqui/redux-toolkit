@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo } from '../store/TodoSlice';
 import { v4 as uuidv4 } from 'uuid';
-import { Grid, TextField } from "@material-ui/core";
+import { Box, Button, TextField } from "@material-ui/core";
 
 function AddForm() {
 
@@ -24,23 +24,22 @@ function AddForm() {
 
     return (
         <div>
-            <Grid container>
-                <Grid item xs={12} sm={10} md={8} lg={6}>
-                    {/* <TextField error label="My Task" />
-                    <TextField
-                    error
-                    id="standard-error-helper-text"
-                    label="Error"
-                    defaultValue="Hello World"
-                    helperText="Incorrect entry."
-                    /> */}
-                </Grid>
-            </Grid>
+            
+                    
+
             <form onSubmit={handleSubmit}>
-                <input type='text'onChange={handleChange}></input>
-                
-                <button type='submit'>Add</button>
-                {/* <button onClick={() => handleDeleteAll}>Delete All</button> */}
+                <TextField
+                    // fullWidth
+                    className='input' 
+                    type='text' 
+                    pattern="[\s\S]*\S[\s\S]*" 
+                    onChange={handleChange} 
+                    label="My Task" />
+                    <Box textAlign='center'>
+                       <Button className='submit' type='submit' variant="contained" color="primary">
+                    Add
+                </Button> 
+                    </Box>
                 
             </form>
         </div>
@@ -48,4 +47,3 @@ function AddForm() {
 }
 
 export default AddForm
-// onChange={handleChange}
