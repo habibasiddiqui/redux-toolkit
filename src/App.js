@@ -13,17 +13,20 @@ function App() {
       <div>
         {/* <CounterBtn />
         <CounterView /> */}
-        <Grid
+        {/* <Grid
+          style={{border: '1px solid blue'}} 
           container
           direction="column"
           alignItems="center"
           justify="center">
-                <Grid style={{border: '1px solid black'}} item xs={12} sm={10} md={8} lg={8}>
-            <Title />
+                <Grid style={{border: '1px solid black'}} item xs={12} >
+                  <Title />
 
                   <TodoList />
                 </Grid>
-        </Grid>
+        </Grid> */}
+        <Title />
+        <TodoList />
       </div>
     </Provider>
 

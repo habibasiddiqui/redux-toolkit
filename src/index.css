@@ -26,18 +26,64 @@ code {
 
 .title {
   overflow-wrap: break-word;
+  border: 1px solid green;
+  text-align: center;
+  margin: 30px auto 10px auto !important;
+}
+
+.subtitle {
+  margin: 10px auto 30px auto !important;
+  overflow-wrap: break-word;
+  border: 1px solid blue;
+  text-align: center;
+}
+
+ .MuiFormLabel-root {
+  color: rebeccapurple !important;
+}
+
+.MuiOutlinedInput-notchedOutline{
+  border: 2px solid rebeccapurple !important;
+
+}
+
+.MuiFormLabel-root.Mui-focused, .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: black !important;
+  color: rgba(0, 0, 0, 0.54) !important;
+
 }
 
 .input{
-  width: 90%;
+  width: 100%;
   /* padding-left: 10px !important; */
   /* padding-right: 10px !important; */
-  margin-left: 10px !important;
-  margin-right: 10px !important;
+  /* margin-left: 10px !important;
+  margin-right: 10px !important; */
+  /* display: flex;
+  justify-content: center; */
 
 }
 
 .submit {
   display: flex;
   justify-content: center;
+}
+
+.icon {
+  color: rebeccapurple;
+  font-size: 4rem !important;
+}
+
+.row-icon {
+  font-size: initial !important;
+  vertical-align: middle;
+
+}
+
+.item-container{
+  border: 1px solid red;
+  /* text-align: center; */
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 30px;
 }

@@ -2,7 +2,9 @@ import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import AddForm from './AddForm';
 import { deleteTodo, editTodo } from '../store/TodoSlice';
-
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import { Grid } from '@material-ui/core';
 
 function TodoList() {
     const tasks = useSelector(state => state);
@@ -25,17 +27,26 @@ function TodoList() {
         <div>
 
             <AddForm />
+            <Grid container spacing={1} justify='center' alignContent='center'>
+                
+                <Grid item xs={10} sm={10} md={8} lg={6} >
             {tasks.length > 0 ? (
                 tasks.map(item => (
-                    <div key={item.id}>{item.title}
-                    
-                    <button onClick={() => handleDelete(item.id)}>Del</button>
-                    <button onClick={() => handleEdit(item)}>Edit</button>
+                    <div className='item-container' key={item.id}>
+                        <span className='item-title'>{item.title}</span>
+                        <span className='item-icon-container'>
+                            <DeleteForeverIcon className='icon row-icon' onClick={() => handleDelete(item.id)} />
+                            <EditIcon className='icon row-icon' onClick={() => handleEdit(item)} />
+
+                        </span>
+                        
                     </div>
                 ))
             ) : (
                 <p>No tasks left, yay!</p>
             )}
+            </Grid>
+            </Grid>
             
         </div>
     )
