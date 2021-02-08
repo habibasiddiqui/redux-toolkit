@@ -40,6 +40,7 @@ function AddForm() {
                         variant='outlined'
                         onChange={handleChange} 
                         label="My Task"
+                        // inputProps={{pattern: ".*\S+.*"}}
                         // inputProps={ {pattern: "[\s\S]*\S[\s\S]*"} }
                         // inputProps={ {pattern:"^[a-zA-Z1-9].*"} }
                         // inputProps={ {pattern: "\S(.*\S)?"} }
