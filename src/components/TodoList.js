@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import AddForm from './AddForm';
 import { deleteTodo, editTodo } from '../store/TodoSlice';
@@ -23,6 +23,18 @@ function TodoList() {
         dispatch(editTodo({id, edited}));
     }
     // console.log('after edit:', tasks);
+
+    // set row bg color
+    const alternatingColor = ['lightcyan', 'cornsilk'];
+
+    // line-through on click
+    // let [clicked, setClicked] = useState(false);
+    // let computedClassName = clicked ? 'row-container-linethrough' : 'row-container';
+
+    // const handleLineThrough = () => {
+    //     setClicked(!clicked);
+    // }
+
     return (
         <div>
 
@@ -31,13 +43,12 @@ function TodoList() {
                 
                 <Grid item xs={10} sm={10} md={8} lg={6} >
             {tasks.length > 0 ? (
-                tasks.map(item => (
-                    <div className='item-container' key={item.id}>
-                        <span className='item-title'>{item.title}</span>
-                        <span className='item-icon-container'>
-                            <DeleteForeverIcon className='icon row-icon' onClick={() => handleDelete(item.id)} />
-                            <EditIcon className='icon row-icon' onClick={() => handleEdit(item)} />
-
+                tasks.map((item, index) => (
+                    <div className='row-container' key={item.id} style={{ backgroundColor: `${index % 2 ? alternatingColor[0] : alternatingColor[1]}` }}>
+                        <span className='row-title'>{item.title}</span>
+                        <span className='row-icon-container'>
+                            <EditIcon className='icon row-icon edit' onClick={() => handleEdit(item)} />
+                            <DeleteForeverIcon className='icon row-icon del' onClick={() => handleDelete(item.id)} />
                         </span>
                         
                     </div>

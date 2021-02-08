@@ -4,6 +4,8 @@ import { addTodo } from '../store/TodoSlice';
 import { v4 as uuidv4 } from 'uuid';
 import { Box, Button, TextField, Grid } from "@material-ui/core";
 import AddBoxIcon from '@material-ui/icons/AddBox';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import AddBoxOutlinedIcon from '@material-ui/icons/AddBoxOutlined';
 
 function AddForm() {
 
@@ -20,23 +22,30 @@ function AddForm() {
         dispatch(addTodo({
             title, id: uuidv4()
         }));
-        e.target.firstChild.value = '';
+        console.log(e.target.childNodes[0].childNodes[1].childNodes[0])
+        e.target.childNodes[0].childNodes[1].childNodes[0].value = '';
     }
+
 
     return (
         <div>
             <Grid container spacing={1} justify='center' alignContent='center'>
                 
                     <Grid item xs={10} sm={10} md={8} lg={6} >
-                    <form onSubmit={handleSubmit} style={{border: '1px solid black'}}>
+                    <form onSubmit={handleSubmit} >
                     <TextField
                         // fullWidth
                         className='input' 
                         type='text' 
                         variant='outlined'
-                        pattern="[\s\S]*\S[\s\S]*" 
                         onChange={handleChange} 
-                        label="My Task" />
+                        label="My Task"
+                        // inputProps={ {pattern: "[\s\S]*\S[\s\S]*"} }
+                        // inputProps={ {pattern:"^[a-zA-Z1-9].*"} }
+                        // inputProps={ {pattern: "\S(.*\S)?"} }
+                        
+                        // helperText="Can not be empty" 
+                        />
                         {/* <Box textAlign='center'>
                         <Button className='submit' type='submit' variant="contained" color="primary">
                             Add
@@ -44,7 +53,9 @@ function AddForm() {
                         </Box> */}
                         <Box textAlign='center'>
 
-                                <AddBoxIcon className='icon' type='submit' />
+                                {/* <AddBoxIcon className='icon' type='submit' />
+                                <AddCircleOutlineIcon className='icon' type='submit' /> */}
+                                <Button type='submit' ><AddBoxOutlinedIcon  className='icon' /></Button>
                         </Box> 
                             
                        
