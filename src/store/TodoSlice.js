@@ -3,10 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 const listSlice = createSlice({
     name: 'todoList',
     initialState: [
-        {
-            title: 'first task',
-            id: 1
-        }
+        // {
+        //     title: 'first task',
+        //     id: 1
+        // },
+        // {
+        //     title: 'first taskfirst taskfirst taskfirst taskfirst taskfirst taskfirst task',
+        //     id: 2
+        // }
         // 'first'   
     ],
     reducers: {
